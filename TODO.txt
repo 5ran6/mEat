@@ -1,0 +1,20 @@
+Order of coding
+> Create the templates for 
+Phase 1
+- Launch
+- Onboarding
+- Login/SignUP
+- Main (Home, Order, Social Hub, Favourites)
+- Drawer Menu
+- Settings
+
+Languge localisation
+Themes: Dark or Light
+Smart Lock to auto fill username and password
+Add TRANSITIONS
+
+
+NAMES OF mEAT RELATED APPS
+> KFC
+> GOOD STUFF EATERY
+> 

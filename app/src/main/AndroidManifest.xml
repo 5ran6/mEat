@@ -52,7 +52,7 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-        <activity android:name=".activity.login_signUp.VerificationHeader" />
+        <activity android:name=".activity.login_signUp.SMS_Verification" />
         <activity
             android:name=".Launcher"
             android:label=""
@@ -66,7 +66,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".activity.main.home" />
-<activity android:name=".activity.bottombarnavigationwithnavigationdrawer.MainActivity"/>
+        <activity android:name=".activity.bottombarnavigationwithnavigationdrawer.MainActivity" />
+        <activity android:name=".activity.login_signUp.SignUp"></activity>
     </application>
 
 </manifest>

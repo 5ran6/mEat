@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
 import meat.mountedwings.org.R;
+import meat.mountedwings.org.utils.Tools;
 
 public class LoginCardOverlap extends AppCompatActivity {
 
@@ -16,7 +17,7 @@ public class LoginCardOverlap extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login_card_number);
-
+        Tools.setSystemBarDisabled(this);
         parent_view = findViewById(android.R.id.content);
 
         ((View) findViewById(R.id.sign_up)).setOnClickListener(new View.OnClickListener() {

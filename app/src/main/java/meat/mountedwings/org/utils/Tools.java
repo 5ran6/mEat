@@ -82,6 +82,11 @@ public class Tools {
             window.setStatusBarColor(Color.argb(255, 255, 234, 187));
         }
     }
+    public static void setSystemBarDisabled(Activity act) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+            Window w = act.getWindow(); // in Activity's onCreate() for instance
+            w.setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
+        }    }
 
     public static void displayImageOriginal(Context ctx, ImageView img, @DrawableRes int drawable) {
         try {

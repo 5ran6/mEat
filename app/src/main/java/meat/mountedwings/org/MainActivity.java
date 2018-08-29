@@ -19,7 +19,7 @@ public class MainActivity extends AppCompatActivity implements SharedPreferences
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Tools.setSystemBarColor(this, R.color.grey_1000);
+        Tools.setSystemBarDisabled(this);
         Thread t = new Thread(new Runnable() {
             @Override
             public void run() {

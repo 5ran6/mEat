@@ -10,6 +10,8 @@ import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
+import meat.mountedwings.org.utils.Tools;
+
 public class Launcher extends AppCompatActivity {
 
     public void onAttachedToWindow() {
@@ -31,6 +33,7 @@ public class Launcher extends AppCompatActivity {
     }
 
     private void StartAnimations() {
+        Tools.setSystemBarDisabled(this);
         Animation anim = AnimationUtils.loadAnimation(this, R.anim.alpha);
         anim.reset();
         LinearLayout l = (LinearLayout) findViewById(R.id.lin_lay);

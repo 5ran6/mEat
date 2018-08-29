@@ -2,6 +2,7 @@ package meat.mountedwings.org.activity.main;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.IdRes;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.FragmentManager;
@@ -57,6 +58,7 @@ public class home extends AppCompatActivity {
     }
 
     private void initComponent(Bundle instance) {
+        Tools.setSystemBarDisabled(this);
         search_bar = (View) findViewById(R.id.search_bar);
         mTextMessage = (TextView) findViewById(R.id.search_text);
 
@@ -83,24 +85,24 @@ public class home extends AppCompatActivity {
                 switch (item.getItemId()) {
                     case R.id.home:
                         fragNavController.switchTab(TAB_FIRST);
-                        Tools.setSystemBarColor(home.this, R.color.green_50);
-                        Tools.setSystemBarLight(home.this);
+//                        Tools.setSystemBarColor(home.this, R.color.green_50);
+//                        Tools.setSystemBarLight(home.this);
                         //    mTextMessage.setText(item.getTitle());
                         navigation.setBackgroundColor(getResources().getColor(R.color.green_400));
 //                        Toast.makeText(getApplicationContext(), "Home", Toast.LENGTH_SHORT).show();
                         return true;
                     case R.id.food_order:
                         fragNavController.switchTab(TAB_SECOND);
-                        Tools.setSystemBarColor(home.this, R.color.pink_50);
-                        Tools.setSystemBarLight(home.this);
-                        //  mTextMessage.setText(item.getTitle());
+//                        Tools.setSystemBarColor(home.this, R.color.pink_50);
+//                        Tools.setSystemBarLight(home.this);
+            //              mTextMessage.setText(item.getTitle());
                         navigation.setBackgroundColor(getResources().getColor(R.color.pink_800));
                         //                      Toast.makeText(getApplicationContext(), "Order", Toast.LENGTH_SHORT).show();
                         return true;
                     case R.id.social_hub:
                         fragNavController.switchTab(TAB_THIRD);
-                        Tools.setSystemBarColor(home.this, R.color.teal_50);
-                        Tools.setSystemBarLight(home.this);
+//                        Tools.setSystemBarColor(home.this, R.color.teal_50);
+//                        Tools.setSystemBarLight(home.this);
 
                         //   mTextMessage.setText(item.getTitle());
                         navigation.setBackgroundColor(getResources().getColor(R.color.teal_800));
@@ -108,21 +110,16 @@ public class home extends AppCompatActivity {
                         return true;
                     case R.id.favourite:
                         fragNavController.switchTab(TAB_FOURTH);
-                        Tools.setSystemBarColor(home.this, R.color.blue_50);
-                        Tools.setSystemBarLight(home.this);
+//                        Tools.setSystemBarColor(home.this, R.color.blue_50);
+//                        Tools.setSystemBarLight(home.this);
                         // mTextMessage.setText(item.getTitle());
                         navigation.setBackgroundColor(getResources().getColor(R.color.blue_700));
                         //                  Toast.makeText(getApplicationContext(), "Favourite", Toast.LENGTH_SHORT).show();
                         return true;
                     default:
-//                        fragNavController.switchTab(TAB_FIRST);
-//                        Tools.setSystemBarColor(home.this, R.color.green_50);
-//                        Tools.setSystemBarLight(home.this);
-//                        navigation.setBackgroundColor(getResources().getColor(R.color.green_400));
+                        fragNavController.clearStack();
                 }
                 return false;
-
-
             }
         });
 

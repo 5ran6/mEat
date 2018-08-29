@@ -7,6 +7,8 @@
     <string name="step_of">Step %1$d of %2$d</string>
     <string name="section_format">Section : %1$d</string>
     <string name="sign_in">S I G N \t  I N</string>
+    <string name="sign_up_1">S I G N \t  U P</string>
+    <string name="register">R E G I S T E R</string>
     <string name="sign_up">Sign Up</string>
     <string name="new_user">New user?   </string>
     <string name="forgot_password">Forgot Password?</string>
@@ -42,7 +44,7 @@
     <string name="verification_text">Verification code has been sent to you on your mobile phone. Please enter it below</string>
     <string name="verification_message">You will get SMS with a confirmation code to this number.</string>
     <string name="_234">+234</string>
-    <string name="_80_3211_2222">80 3211 2222</string>
+    <string name="_80_3211_2222">080 3211 2222</string>
     <string name="please_input_code_below">Please input code below</string>
     <string name="two_mins">02:00</string>
     <string name="continue_">CONTINUE</string>
@@ -83,7 +85,13 @@
     <string name="home_item_2_1">Notification</string>
     <string name="home_item_2_2">Wallet</string>
     <string name="home_item_2_3">Inbox</string>
-    <string name="register">Register</string>
+    <string name="register_1">Register</string>
+    <string name="google">Google</string>
+    <string name="facebook">Facebook</string>
+    <string name="already_have_an_account">Already have an account?</string>
+    <string name="terms_and_conditions">Apply Terms and Conditions</string>
+    <string name="full_name">Full name</string>
+    <string name="email_address">Email Address</string>
 
 
 </resources>

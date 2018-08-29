@@ -16,50 +16,13 @@ import com.facebook.login.LoginResult;
 
 
 import meat.mountedwings.org.R;
+import meat.mountedwings.org.utils.Tools;
 
 public class Login_SignUp extends AppCompatActivity {
-    CallbackManager callbackManager;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        FacebookSdk.sdkInitialize(this.getApplicationContext());
-
-        callbackManager = CallbackManager.Factory.create();
-
-        LoginManager.getInstance().registerCallback(callbackManager,
-                new FacebookCallback<LoginResult>() {
-                    @Override
-                    public void onSuccess(LoginResult loginResult) {
-                        Log.d("Success", "Login");
-
-                    }
-
-                    @Override
-                    public void onCancel() {
-                        Toast.makeText(Login_SignUp.this, "Login Cancel", Toast.LENGTH_LONG).show();
-                    }
-
-                    @Override
-                    public void onError(FacebookException exception) {
-                        Toast.makeText(Login_SignUp.this, exception.getMessage(), Toast.LENGTH_LONG).show();
-                    }
-                });
         setContentView(R.layout.activity_login__sign_up);
+        Tools.setSystemBarDisabled(this);
     }
-
-    public void facebook_login(View view) {
-        //    LoginManager.getInstance().logInWithReadPermissions(Login_SignUp.this, Arrays.asList("public_profile", "user_friends"));
-        Intent intent = new Intent(getApplicationContext(), VerificationHeader.class);
-        startActivity(intent);
-    }
-
-
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-
-        callbackManager.onActivityResult(requestCode, resultCode, data);
-    }
-
 }

@@ -86,7 +86,7 @@
                         app:elevation="1dp"
                         app:fabSize="normal"
                         app:rippleColor="@color/deep_orange_400"
-                        app:srcCompat="@drawable/ic_chat" />
+                        app:srcCompat="@drawable/ic_whatshot" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -140,7 +140,7 @@
                         app:elevation="1dp"
                         app:fabSize="normal"
                         app:rippleColor="@color/deep_orange_400"
-                        app:srcCompat="@drawable/ic_location" />
+                        app:srcCompat="@drawable/ic_photo_camera" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -176,7 +176,7 @@
                         app:elevation="1dp"
                         app:fabSize="normal"
                         app:rippleColor="@color/deep_orange_400"
-                        app:srcCompat="@drawable/ic_peoples" />
+                        app:srcCompat="@drawable/ic_notifications_active_black_24dp" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -203,7 +203,7 @@
                         app:elevation="1dp"
                         app:fabSize="normal"
                         app:rippleColor="@color/deep_orange_400"
-                        app:srcCompat="@drawable/ic_whatshot" />
+                        app:srcCompat="@drawable/ic_account_balance_wallet_black_24dp" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -230,7 +230,7 @@
                         app:elevation="1dp"
                         app:fabSize="normal"
                         app:rippleColor="@color/deep_orange_400"
-                        app:srcCompat="@drawable/ic_notifications" />
+                        app:srcCompat="@drawable/ic_chat" />
 
                     <TextView
                         android:layout_width="wrap_content"

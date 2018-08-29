@@ -14,17 +14,18 @@ import java.util.Objects;
 import java.util.concurrent.TimeUnit;
 
 import meat.mountedwings.org.R;
+import meat.mountedwings.org.utils.Tools;
 
-public class VerificationHeader extends AppCompatActivity {
+public class SMS_Verification extends AppCompatActivity {
 
     private TextView tv_coundown;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_verification_header);
-        initToolbar();
-
+        setContentView(R.layout.activity_sms_verification);
+        Tools.setSystemBarDisabled(this);
+      //  initToolbar();
         tv_coundown = (TextView) findViewById(R.id.tv_coundown);
         countDownTimer();
     }

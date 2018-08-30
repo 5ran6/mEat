@@ -7,9 +7,9 @@
     <ImageView
         android:id="@+id/material_drawer_account_header_background"
         android:layout_width="match_parent"
-        android:src="@color/orange_400"
         android:layout_height="@dimen/material_drawer_account_header_height"
-        android:scaleType="fitXY" />
+        android:scaleType="fitXY"
+        android:src="@color/orange_400" />
 
     <RelativeLayout
         android:id="@+id/material_drawer_account_header"
@@ -26,14 +26,16 @@
             android:layout_marginLeft="@dimen/material_drawer_vertical_padding"
             android:layout_marginTop="@dimen/material_drawer_account_header_horizontal_top"
             android:clickable="true"
-            android:elevation="2dp" />
+            android:elevation="2dp"
+            android:onClick="profile"
+            android:src="@drawable/avatar" />
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
             android:layout_alignTop="@+id/material_drawer_account_header_current"
-            android:gravity="right">
+            android:gravity="end">
 
             <com.mikepenz.materialdrawer.view.BezelImageView
                 android:id="@+id/material_drawer_account_header_small_first"
@@ -42,7 +44,7 @@
                 android:layout_marginRight="@dimen/material_drawer_vertical_padding"
                 android:clickable="true"
                 android:elevation="2dp"
-                android:visibility="visible" />
+                android:visibility="invisible" />
 
             <com.mikepenz.materialdrawer.view.BezelImageView
                 android:id="@+id/material_drawer_account_header_small_second"
@@ -51,7 +53,7 @@
                 android:layout_marginRight="@dimen/material_drawer_vertical_padding"
                 android:clickable="true"
                 android:elevation="2dp"
-                android:visibility="visible" />
+                android:visibility="invisible" />
 
             <com.mikepenz.materialdrawer.view.BezelImageView
                 android:id="@+id/material_drawer_account_header_small_third"
@@ -60,6 +62,7 @@
                 android:layout_marginRight="@dimen/material_drawer_vertical_padding"
                 android:clickable="true"
                 android:elevation="2dp"
+                android:onClick="coin"
                 android:visibility="visible" />
         </LinearLayout>
 
@@ -85,6 +88,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/material_drawer_vertical_padding"
                 android:fontFamily="sans-serif-medium"
+
                 android:lines="1"
                 android:singleLine="true"
                 android:text="@string/app_name"
@@ -106,14 +110,13 @@
 
         <ImageView
             android:id="@+id/material_drawer_account_header_text_switcher"
-            android:layout_width="@dimen/material_drawer_account_header_dropdown"
-            android:layout_height="@dimen/material_drawer_account_header_dropdown"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:layout_alignParentRight="true"
             android:layout_marginBottom="@dimen/material_drawer_account_header_dropdown_margin_bottom"
             android:layout_marginRight="@dimen/material_drawer_vertical_padding"
             app:srcCompat="@drawable/ic_check_circle"
             tools:ignore="VectorDrawableCompat" />
-
     </RelativeLayout>
 </FrameLayout>

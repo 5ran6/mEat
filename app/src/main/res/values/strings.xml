@@ -70,6 +70,7 @@
     <string name="drawer_item_6">Help</string>
     <string name="drawer_item_7">Logout</string>
     <string name="category">Others</string>
+    <string name="personal">Personal</string>
 
     <string name="drawer_item_option1">Option 1</string>
     <string name="drawer_item_settings">Settings</string>

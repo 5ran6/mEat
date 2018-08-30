@@ -2,6 +2,7 @@ package meat.mountedwings.org.activity.main;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.PersistableBundle;
 import android.support.annotation.IdRes;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
@@ -9,6 +10,7 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.widget.NestedScrollView;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.Gravity;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageButton;
@@ -31,7 +33,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import meat.mountedwings.org.R;
-import meat.mountedwings.org.activity.bottombarnavigationwithnavigationdrawer.MainActivity;
 import meat.mountedwings.org.activity.login_signUp.LoginCardOverlap;
 import meat.mountedwings.org.utils.Tools;
 
@@ -40,7 +41,6 @@ public class home extends AppCompatActivity {
     private TextView mTextMessage;
     private BottomNavigationView navigation;
     private View search_bar;
-
     private FragNavController fragNavController;
 
     //indices to fragments
@@ -53,12 +53,11 @@ public class home extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bottom_navigation_shifting);
-
         initComponent(savedInstanceState);
     }
 
     private void initComponent(Bundle instance) {
-        Tools.setSystemBarDisabled(this);
+        Tools.clearSystemBarLight(this);
         search_bar = (View) findViewById(R.id.search_bar);
         mTextMessage = (TextView) findViewById(R.id.search_text);
 
@@ -95,7 +94,7 @@ public class home extends AppCompatActivity {
                         fragNavController.switchTab(TAB_SECOND);
 //                        Tools.setSystemBarColor(home.this, R.color.pink_50);
 //                        Tools.setSystemBarLight(home.this);
-            //              mTextMessage.setText(item.getTitle());
+                        //              mTextMessage.setText(item.getTitle());
                         navigation.setBackgroundColor(getResources().getColor(R.color.pink_800));
                         //                      Toast.makeText(getApplicationContext(), "Order", Toast.LENGTH_SHORT).show();
                         return true;
@@ -166,15 +165,16 @@ public class home extends AppCompatActivity {
 
         new DrawerBuilder()
                 .withActivity(this)
-                .withToolbar(toolbar)
+//                .withToolbar(toolbar)
                 .withActionBarDrawerToggleAnimated(true)
-                .withTranslucentStatusBar(false)
+                .withTranslucentStatusBar(true)
                 .withFullscreen(true)
                 .withSavedInstance(instance)
                 .withHeader(R.layout.drawer_header)
                 .withFooter(R.layout.chip_view)
                 .withFooterClickable(true)
                 .addDrawerItems(
+                        new SectionDrawerItem().withName(getString(R.string.personal)),
                         profile,
                         primary_item1,
                         primary_item2,
@@ -262,26 +262,27 @@ public class home extends AppCompatActivity {
     }
 
     @Override
+    public void onSaveInstanceState(Bundle outState, PersistableBundle outPersistentState) {
+        super.onSaveInstanceState(outState, outPersistentState);
+        fragNavController.getCurrentStack();
+    }
+
+    @Override
     protected void onResume() {
         super.onResume();
         // When orientation is changed, activity goes through onResume()
         try {
-//            final homeFragment homeFragment = meat.mountedwings.org.activity.main.homeFragment.newInstance(meat.mountedwings.org.activity.main.homeFragment.SavedState);
-//            foodOrderFragment.newInstance(0);
-//           socialHubFragment.newInstance(0);
-//           favouriteFragment.newInstance(0);
+//            Class fragmentClass = homeFragment.class;
+//            Fragment myFragment;
+//            myFragment = (Fragment) fragmentClass.newInstance();
+//            FragmentManager fragmentManager = getSupportFragmentManager();
+//            fragmentManager.beginTransaction().replace(R.id.container, myFragment).commit();
+//            Tools.setSystemBarColor(home.this, R.color.green_50);
+//            Tools.setSystemBarLight(home.this);
+//            //    mTextMessage.setText(item.getTitle());
+//            navigation.setBackgroundColor(getResources().getColor(R.color.green_400));
+//            navigation.setSelectedItemId(R.id.home);
 
-
-            Class fragmentClass = homeFragment.class;
-            Fragment myFragment;
-            myFragment = (Fragment) fragmentClass.newInstance();
-            FragmentManager fragmentManager = getSupportFragmentManager();
-            fragmentManager.beginTransaction().replace(R.id.container, myFragment).commit();
-            Tools.setSystemBarColor(home.this, R.color.green_50);
-            Tools.setSystemBarLight(home.this);
-            //    mTextMessage.setText(item.getTitle());
-            navigation.setBackgroundColor(getResources().getColor(R.color.green_400));
-            navigation.setSelectedItemId(R.id.home);
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -296,5 +297,13 @@ public class home extends AppCompatActivity {
         //intent to signIn activity
         Intent intent = new Intent(getApplicationContext(), LoginCardOverlap.class);
         startActivity(intent);
+    }
+
+    public void profile(View view) {
+        // TODO Intent to go to profile activity
+    }
+
+    public void coin(View view) {
+
     }
 }

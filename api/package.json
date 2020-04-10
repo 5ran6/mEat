@@ -1,0 +1,30 @@
+{
+  "name": "meat",
+  "version": "1.0.0",
+  "description": "The ideal food service provider",
+  "main": "mEat.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/5ran6/mEat.git"
+  },
+  "keywords": [
+    "mEat",
+    "food",
+    "mountedwings",
+    "order",
+    "eat",
+    "nigerian"
+  ],
+  "author": "Ocholi Francis",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/5ran6/mEat/issues"
+  },
+  "homepage": "https://github.com/5ran6/mEat#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
